@@ -1,10 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Siddhartha Review Hub</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Siddhartha Review Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>Coming Soon...</h1>
-    <p>Siddhartha Review Hub is under development.</p>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+<img src="assets/logo.png" class="logo">
+
+<h1>Thank You For Visiting</h1>
+
+<h2>Siddhartha Nepalese Restaurant</h2>
+
+<p class="subtitle">
+
+Your feedback means a lot to our family restaurant.
+
+</p>
+
+<div id="ratingBox">
+
+<h3>How was your experience?</h3>
+
+<div class="stars">
+
+<span onclick="rate(1)">⭐</span>
+
+<span onclick="rate(2)">⭐</span>
+
+<span onclick="rate(3)">⭐</span>
+
+<span onclick="rate(4)">⭐</span>
+
+<span onclick="rate(5)">⭐</span>
+
+</div>
+
+</div>
+
+<div id="goodReview" class="hidden">
+
+<h2>🎉 Thank You!</h2>
+
+<p>Please support us by leaving us a review.</p>
+
+<a
+class="button google"
+href="https://search.google.com/local/writereview?placeid=ChIJc9ZHbiYKkkYReRz_Myl0jtE&source=g.page.m._&laa=merchant-review-solicitation"
+target="_blank">
+
+Google Review
+
+</a>
+
+<a
+class="button tripadvisor"
+href="https://www.tripadvisor.com/Restaurant_Review-g189934-d28897453-Reviews-Ravintola_Siddhartha-Helsinki_Uusimaa.html"
+target="_blank">
+
+TripAdvisor
+
+</a>
+
+<a
+class="button facebook"
+href="https://www.facebook.com/p/Ravintola-Siddhartha-100057107603729/"
+target="_blank">
+
+Facebook
+
+</a>
+
+</div>
+<div id="badReview" class="hidden">
+
+    <h2>❤️ We're Sorry</h2>
+
+    <p>
+        We read every message personally.
+        Please tell us what happened.
+    </p>
+
+    <form
+        id="feedbackForm"
+        action="https://formspree.io/f/xojoddyo"
+        method="POST">
+
+        <input
+            type="text"
+            name="Name"
+            placeholder="Your Name (Optional)">
+
+        <input
+            type="email"
+            name="Email"
+            placeholder="Email Address (Optional)">
+
+        <textarea
+            name="Feedback"
+            placeholder="Tell us what happened..."
+            required></textarea>
+
+        <input
+            type="hidden"
+            name="_subject"
+            value="New Siddhartha Customer Feedback">
+
+        <button type="submit">
+            Send Feedback ❤️
+        </button>
+
+    </form>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
