@@ -1,4 +1,3 @@
-alert("JavaScript loaded");
 function rate(stars){
 
     document.getElementById("ratingBox").style.display="none";
