@@ -1,18 +1,21 @@
-function rate(stars){
+function rate(stars) {
 
-    document.getElementById("ratingBox").style.display="none";
+    document.getElementById("ratingBox").style.display = "none";
 
-    if(stars >= 4){
+    if (stars >= 4) {
 
-        document.getElementById("goodReview").style.display="block";
+        document.getElementById("goodReview").style.display = "block";
+        history.pushState({ page: "good" }, "", "#good");
 
-    }else{
+    } else {
 
-        document.getElementById("badReview").style.display="block";
+        document.getElementById("badReview").style.display = "block";
+        history.pushState({ page: "bad" }, "", "#bad");
 
     }
 
 }
+
 const feedbackForm = document.getElementById("feedbackForm");
 
 feedbackForm.addEventListener("submit", async function (e) {
@@ -31,21 +34,19 @@ feedbackForm.addEventListener("submit", async function (e) {
             }
         });
 
-       if (response.ok) {
+        if (response.ok) {
 
-    // Hide the entire "We're Sorry" section
-    document.getElementById("badReview").innerHTML = `
-        <h2>❤️ Thank You!</h2>
+            document.getElementById("badReview").innerHTML = `
+                <h2>❤️ Thank You!</h2>
 
-        <p>
-            Your feedback has been sent successfully.
-            <br><br>
-            We truly appreciate you taking the time to help us improve.
-            We hope to welcome you again soon.
-        </p>
-    `;
+                <p>
+                    Your feedback has been received successfully.
+                    <br><br>
+                    We sincerely appreciate you taking the time to share your experience.
+                </p>
+            `;
 
-} else {
+        } else {
 
             alert("Sorry, something went wrong. Please try again.");
 
@@ -56,5 +57,13 @@ feedbackForm.addEventListener("submit", async function (e) {
         alert("Network error. Please try again.");
 
     }
+
+});
+
+window.addEventListener("popstate", function () {
+
+    document.getElementById("ratingBox").style.display = "block";
+    document.getElementById("goodReview").style.display = "none";
+    document.getElementById("badReview").style.display = "none";
 
 });
