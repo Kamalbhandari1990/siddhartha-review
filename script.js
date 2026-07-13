@@ -31,12 +31,21 @@ feedbackForm.addEventListener("submit", async function (e) {
             }
         });
 
-        if (response.ok) {
+       if (response.ok) {
 
-            feedbackForm.style.display = "none";
-            document.getElementById("successMessage").style.display = "block";
+    // Hide the entire "We're Sorry" section
+    document.getElementById("badReview").innerHTML = `
+        <h2>❤️ Thank You!</h2>
 
-        } else {
+        <p>
+            Your feedback has been sent successfully.
+            <br><br>
+            We truly appreciate you taking the time to help us improve.
+            We hope to welcome you again soon.
+        </p>
+    `;
+
+} else {
 
             alert("Sorry, something went wrong. Please try again.");
 
