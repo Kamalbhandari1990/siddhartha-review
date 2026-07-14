@@ -369,3 +369,30 @@ font-size:18px;
 }
 
 }
+.language-switch{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.language-switch button{
+    background:none;
+    border:none;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    opacity:.6;
+    font-weight:500;
+    transition:.25s;
+}
+
+.language-switch button:hover{
+    opacity:1;
+}
+
+.language-switch button.active{
+    opacity:1;
+    font-weight:700;
+    text-decoration:underline;
+}

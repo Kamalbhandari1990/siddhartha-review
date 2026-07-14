@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Siddhartha Review Hub</title>
@@ -12,7 +11,6 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,125 +23,135 @@
 
 <div class="container">
 
-<img src="assets/logo.png" class="logo">
-
-<h1>Thank You For Visiting</h1>
-
-<h2>Siddhartha Nepalese Restaurant</h2>
-
-<p class="subtitle">
-
-Your feedback means a lot to our family restaurant.
-
-</p>
-
-<div id="ratingBox">
-
-<h3>How was your experience?</h3>
-
-<div class="stars">
-
-<span onclick="rate(1)">⭐</span>
-
-<span onclick="rate(2)">⭐</span>
-
-<span onclick="rate(3)">⭐</span>
-
-<span onclick="rate(4)">⭐</span>
-
-<span onclick="rate(5)">⭐</span>
-
-</div>
-
-</div>
-
-<div id="goodReview" class="hidden">
-
-<h2>🎉 Thank You!</h2>
-
-<p>Please support us by leaving us a review.</p>
-
-<a
-class="button google"
-href="https://search.google.com/local/writereview?placeid=ChIJc9ZHbiYKkkYReRz_Myl0jtE&source=g.page.m._&laa=merchant-review-solicitation"
-target="_blank">
-
-Google Review
-
-</a>
-
-<a
-class="button tripadvisor"
-href="https://www.tripadvisor.com/UserReviewEdit-g189934-d28897453-Ravintola_Siddhartha-Helsinki_Uusimaa.html"
-target="_blank"
-rel="noopener noreferrer">
-
-TripAdvisor
-
-</a>
-
-<a
-class="button facebook"
-href="https://www.facebook.com/p/Ravintola-Siddhartha-100057107603729/"
-target="_blank">
-
-Facebook
-
-</a>
-
-</div>
-<div id="badReview" class="hidden">
-
-   <h2>❤️ We're Sorry</h2>
-
-<p>
-    Your experience matters to us.
-    <br><br>
-    Please tell us what went wrong so we can make it right.
-</p>
-    <form
-        id="feedbackForm"
-        action="https://formspree.io/f/xojoddyo"
-        method="POST">
-
-        <input
-            type="text"
-            name="Name"
-            placeholder="Your Name (Optional)">
-
-        <input
-            type="email"
-            name="Email"
-            placeholder="Email Address (Optional)">
-
-        <textarea
-            name="Feedback"
-            placeholder="Tell us what happened..."
-            required></textarea>
-
-        <input
-            type="hidden"
-            name="_subject"
-            value="New Siddhartha Customer Feedback">
-
-        <button type="submit">
-            Send Feedback ❤️
+    <div class="language-switch">
+        <button id="lang-en" class="active" onclick="setLanguage('en')">
+            🇬🇧 English
         </button>
 
-    </form>
-    <div id="successMessage" class="hidden">
+        <button id="lang-fi" onclick="setLanguage('fi')">
+            🇫🇮 Suomi
+        </button>
+    </div>
 
-    <h2>❤️ Thank You!</h2>
+    <img src="assets/logo.png" class="logo" alt="Siddhartha Nepalese Restaurant">
 
-<p>
-    Your feedback has been received successfully.
-    <br><br>
-    We sincerely appreciate you taking the time to share your experience.
-</p>
+    <h1 id="title">Thank You For Visiting</h1>
 
-</div>
+    <h2 id="restaurant">Siddhartha Nepalese Restaurant</h2>
 
-</div>
+    <p class="subtitle" id="subtitle">
+        Your feedback means a lot to our family restaurant.
+    </p>
+
+    <div id="ratingBox">
+
+        <h3 id="question">How was your experience?</h3>
+
+        <div class="stars">
+            <span onclick="rate(1)">⭐</span>
+            <span onclick="rate(2)">⭐</span>
+            <span onclick="rate(3)">⭐</span>
+            <span onclick="rate(4)">⭐</span>
+            <span onclick="rate(5)">⭐</span>
+        </div>
+
+    </div>
+
+    <div id="goodReview" class="hidden">
+
+        <h2 id="goodTitle">🎉 Thank You!</h2>
+
+        <p id="goodText">
+            Please support us by leaving us a review.
+        </p>
+
+        <a
+            id="googleButton"
+            class="button google"
+            href="https://search.google.com/local/writereview?placeid=ChIJc9ZHbiYKkkYReRz_Myl0jtE&source=g.page.m._&laa=merchant-review-solicitation"
+            target="_blank"
+            rel="noopener noreferrer">
+            Google Review
+        </a>
+
+        <a
+            id="tripButton"
+            class="button tripadvisor"
+            href="https://www.tripadvisor.com/UserReviewEdit-g189934-d28897453-Ravintola_Siddhartha-Helsinki_Uusimaa.html"
+            target="_blank"
+            rel="noopener noreferrer">
+            TripAdvisor
+        </a>
+
+        <a
+            id="facebookButton"
+            class="button facebook"
+            href="https://www.facebook.com/p/Ravintola-Siddhartha-100057107603729/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Facebook
+        </a>
+
+    </div>
+        <div id="badReview" class="hidden">
+
+        <h2 id="badTitle">❤️ We're Sorry</h2>
+
+        <p id="badText">
+            Your experience matters to us.
+            <br><br>
+            Please tell us what went wrong so we can make it right.
+        </p>
+
+        <form
+            id="feedbackForm"
+            action="https://formspree.io/f/xojoddyo"
+            method="POST">
+
+            <input
+                id="nameInput"
+                type="text"
+                name="Name"
+                placeholder="Your Name (Optional)">
+
+            <input
+                id="emailInput"
+                type="email"
+                name="Email"
+                placeholder="Email Address (Optional)">
+
+            <textarea
+                id="feedbackInput"
+                name="Feedback"
+                placeholder="Please share your experience..."
+                required></textarea>
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="New Siddhartha Customer Feedback">
+
+            <button
+                id="sendButton"
+                type="submit">
+                Send Feedback ❤️
+            </button>
+
+        </form>
+
+        <div id="successMessage" class="hidden">
+
+            <h2 id="successTitle">❤️ Thank You!</h2>
+
+            <p id="successText">
+                Your feedback has been received successfully.
+                <br><br>
+                We sincerely appreciate you taking the time to share your experience.
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
 
